@@ -1,0 +1,32 @@
+{
+    "kind": "collectionType",
+    "collectionName": "categories",
+    "info": {
+        "singularName": "category",
+        "pluralName": "categories",
+        "displayName": "Category",
+        "description": "Organize your content into categories"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string"
+        },
+        "slug": {
+            "type": "uid",
+            "targetField": "name"
+        },
+        "description": {
+            "type": "text"
+        },
+        "blogs": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::blog.blog",
+            "mappedBy": "categories"
+        }
+    }
+}
